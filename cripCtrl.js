@@ -1,6 +1,4 @@
 app.controller('cripCtrl', function($scope) {
-    $scope.plaintextForOne = ["fdsa", "sdg"]
-    $scope.plaintextForOther = ["other", "stuff"]
 
     // Function to find all plaintext words that
     // match the ciphertext word the user entered.
