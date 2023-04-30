@@ -4,21 +4,21 @@ app.controller('cripCtrl', function($scope) {
     // match the ciphertext word the user entered.
     $scope.solve = function() {
         let candidates = getCandidates(getWordPattern($scope.ciphertext));
-    if (candidates.length == 0)
+        if (candidates.length == 0)
           $scope.plaintext = "No ciphertext words found";
-    else {
-     $scope.plaintext = ""
-     for (candidate of candidates) {
-       if (conformsToLikeExclusion(candidate))
-         $scope.plaintext += candidate + " ";
-     }
-    }
+        else {
+          $scope.plaintext = ""
+          for (candidate of candidates) {
+            if (conformsToLikeExclusion(candidate))
+              $scope.plaintext += candidate + " ";
+          }
+        }
     }
 
     // Function to clear the HTML form.
     $scope.clear = function() {
         $scope.ciphertext = "";
-    $scope.likeexclusion = false;
+        $scope.likeexclusion = false;
     }
 
     // Function to determine the cryptogram-dictionary key. For
